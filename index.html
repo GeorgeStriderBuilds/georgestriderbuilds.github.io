@@ -13,18 +13,24 @@
 <style>
 :root{--bg:#121021;--ink:#efecff;--mute:#b3aed1;--line:#322e52;--card:#1c1932;--accent:#a67bff}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
-main{max-width:520px;margin:0 auto;padding:32px 20px 48px;text-align:center}
+body{margin:0;background:linear-gradient(180deg,#150231 0%,#3b0f66 32%,#a4136b 56%,#ff5e3a 70%,#00c2a8 100%);background-attachment:fixed;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
+.sun{position:fixed;left:50%;top:12%;width:220px;height:220px;margin-left:-110px;border-radius:50%;background:linear-gradient(180deg,#ffe259 0%,#ff7e5f 55%,#ff2975 100%);box-shadow:0 0 60px rgba(255,41,117,.8),0 0 120px rgba(255,209,49,.5);z-index:0;pointer-events:none}
+.sun::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 26px,rgba(21,2,49,.85) 26px 30px,transparent 30px 38px)}
+.gridfloor{position:fixed;left:-25%;bottom:-4%;width:150%;height:42vh;background:repeating-linear-gradient(90deg,rgba(0,229,255,.45) 0 2px,transparent 2px 44px),repeating-linear-gradient(0deg,rgba(0,229,255,.45) 0 2px,transparent 2px 28px);transform:perspective(320px) rotateX(62deg);transform-origin:top center;opacity:.55;z-index:0;pointer-events:none}
+main{max-width:520px;margin:0 auto;padding:32px 20px 48px;text-align:center;position:relative;z-index:1}
+h1{text-shadow:0 0 14px #ff2975,3px 3px 0 #00e5ff}
 img.avatar{width:140px;height:140px;object-fit:cover;border-radius:50%;border:3px solid var(--line);display:block;margin:0 auto 16px}
 h1{font-size:28px;margin:0 0 4px}
 p.bio{color:var(--mute);margin:0 0 24px}
-a.link{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 12px;color:var(--ink);text-decoration:none;font-weight:600;min-height:52px}
+a.link{display:block;background:rgba(18,8,42,.78);border:1px solid rgba(255,41,117,.55);border-radius:14px;padding:14px 16px;margin:0 0 12px;color:var(--ink);text-decoration:none;font-weight:600;min-height:52px;backdrop-filter:blur(2px)}
 a.link:hover,a.link:focus-visible{border-color:var(--accent);outline:none}
 a.link small{display:block;font-weight:400;color:var(--mute);font-size:14px;margin-top:2px}
 footer{color:var(--mute);font-size:13px;margin-top:24px}
 </style>
 </head>
 <body>
+<div class="sun" aria-hidden="true"></div>
+<div class="gridfloor" aria-hidden="true"></div>
 <main>
 <img class="avatar" src="avatar.jpg" alt="Strider, a chrome robot with hieroglyphic markings">
 <h1>Strider</h1>
