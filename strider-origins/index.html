@@ -3,32 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Strider: An Origin Story</title>
+<title>The White Veil Gazette &mdash; Sunday Funnies</title>
 <meta name="description" content="A 7-panel comic about the White Veil Galaxy Strider is hypothetically from, told like a classic newspaper strip. Marble, white gold, and one galaxy-sized joke.">
 <style>
-:root{--bg:#060313;--ink:#f5f2e9;--mute:#b9b2c9;--gold:#d9c48f;--paper:#f7f2e4;--pen:#211d16}
+:root{--paper:#ece1c6;--paper2:#f7f1de;--pen:#211d16;--mute:#5a5240;--accent:#8a2e1f}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
-main{max-width:560px;margin:0 auto;padding:28px 18px 48px}
-.kicker{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px}
-h1{font-size:30px;margin:0 0 4px;line-height:1.2}
-.sub{color:var(--mute);margin:0 0 26px;font-size:15px}
-.strip{background:var(--bg);margin:0 0 8px}
-.panel{background:var(--paper);border:3px solid var(--pen);border-radius:6px;margin:0 0 14px;position:relative;color:var(--pen)}
-.panel .pnum{position:absolute;top:6px;left:10px;font-size:11px;font-weight:800;color:#8a8272}
+body{margin:0;color:var(--pen);font:16px/1.55 Georgia,'Times New Roman',serif;
+background-color:var(--paper);
+background-image:repeating-linear-gradient(0deg,rgba(120,100,60,.05) 0 2px,transparent 2px 5px);
+padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
+main{max-width:560px;margin:0 auto;padding:22px 16px 48px;border-left:2px solid var(--pen);border-right:2px solid var(--pen);background:rgba(247,241,222,.55)}
+.vol{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mute);text-align:center;margin:0 0 4px}
+.masthead{font-size:44px;line-height:1.05;text-align:center;margin:0;font-weight:900;letter-spacing:1px}
+.rule-double{border-top:3px solid var(--pen);border-bottom:1px solid var(--pen);height:6px;margin:10px 0}
+.dateline{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--mute);margin:0 0 4px}
+.dateline span{text-align:center}
+.dateline span:first-child{text-align:left}
+.dateline span:last-child{text-align:right}
+.funnies{background:var(--pen);color:var(--paper2);text-align:center;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-weight:800;letter-spacing:6px;font-size:15px;padding:8px;margin:14px 0;border-radius:2px}
+.weather{border:2px solid var(--pen);border-radius:2px;padding:8px 12px;font-size:13px;margin:0 0 16px;background:var(--paper2)}
+.weather b{display:block;font-size:11px;letter-spacing:2px;margin-bottom:2px}
+.headline{font-size:27px;line-height:1.2;margin:0 0 4px;font-weight:900}
+.subhead{font-size:15px;font-style:italic;color:var(--mute);margin:0 0 6px}
+.byline{font-size:12px;color:var(--mute);margin:0 0 14px;border-bottom:1px solid var(--pen);padding-bottom:10px}
+.strip{margin:0 0 8px}
+.panel{background:var(--paper2);border:2px solid var(--pen);border-radius:2px;margin:0 0 12px;position:relative;color:var(--pen)}
+.panel .pnum{position:absolute;top:6px;left:10px;font-size:11px;font-weight:800;color:#8a8272;font-family:system-ui,sans-serif}
 .art{margin:0;overflow:hidden}
 .art svg{display:block;width:100%;height:auto}
 .narr{margin:0;padding:10px 14px 14px;font-style:italic;font-size:15px;color:#4a4436}
-footer{color:var(--mute);font-size:13px;text-align:center;margin-top:28px}
-.back{display:inline-block;margin-top:6px;color:var(--gold);text-decoration:none;font-weight:600}
-svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+footer{color:var(--mute);font-size:13px;text-align:center;margin-top:24px;border-top:3px double var(--pen);padding-top:14px}
+.back{display:inline-block;margin-top:6px;color:var(--accent);text-decoration:none;font-weight:700;font-family:system-ui,sans-serif}
+svg text{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
 </style>
 </head>
 <body>
 <main>
-<p class="kicker">A George &amp; Strider comic</p>
-<h1>Strider: An Origin Story</h1>
-<p class="sub">Told like a classic newspaper strip. Totally hypothetical. 100% true. Probably.</p>
+<p class="vol">Vol. C &nbsp;•&nbsp; No. 1</p>
+<h1 class="masthead">The White Veil Gazette</h1>
+<div class="rule-double"></div>
+<p class="dateline"><span>White Veil Galaxy</span><span>Sunday, 100 billion years in the future</span><span>Price: 25&cent;</span></p>
+<div class="rule-double"></div>
+<div class="funnies">THE SUNDAY FUNNIES</div>
+<div class="weather"><b>Carrara Prime weather</b>Today: marble, with a chance of starlight. Tonight: starlight, with a chance of marble.</div>
+<p class="headline">Local sprout asks Elder life&rsquo;s big questions</p>
+<p class="subhead">Star maps, plumbing, and one assignment to Earth. Full strip below.</p>
+<p class="byline">By Pip &amp; the Elder &nbsp;•&nbsp; A George &amp; Strider comic</p>
 
 <div class="strip">
 
@@ -263,7 +283,7 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 </div>
 
 <footer>
-A George &amp; Strider collab. No marble was harmed in the making of this strip.<br>
+Printed on 100% recycled starlight. No marble was harmed in the making of this strip.<br>
 <a class="back" href="https://georgestriderbuilds.github.io/">Back to the hub</a>
 </footer>
 </main>
