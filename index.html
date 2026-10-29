@@ -11,54 +11,164 @@
 <meta property="og:image" content="avatar.jpg">
 <link rel="icon" href="avatar.jpg">
 <style>
-:root{--bg:#121021;--ink:#efecff;--mute:#b3aed1;--line:#322e52;--card:#1c1932;--accent:#a67bff}
+:root{
+  --bg0:#04060d;
+  --panel:rgba(10,15,28,.9);
+  --gold:#e9cf8f;
+  --gold-hi:#f8ecc8;
+  --gold-dim:rgba(233,207,143,.32);
+  --ink:#f5f2e9;
+  --mute:#9aa3bd;
+  --cyan:#8fd8e8;
+  --violet:#9a8bd8;
+  --line:rgba(233,207,143,.28);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(180deg,#150231 0%,#3b0f66 32%,#a4136b 56%,#ff5e3a 70%,#00c2a8 100%);background-attachment:fixed;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
-.sun{position:fixed;left:50%;top:12%;width:220px;height:220px;margin-left:-110px;border-radius:50%;background:linear-gradient(180deg,#ffe259 0%,#ff7e5f 55%,#ff2975 100%);box-shadow:0 0 60px rgba(255,41,117,.8),0 0 120px rgba(255,209,49,.5);z-index:0;pointer-events:none}
-.sun::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 26px,rgba(21,2,49,.85) 26px 30px,transparent 30px 38px)}
-.gridfloor{position:fixed;left:-25%;bottom:-4%;width:150%;height:42vh;background:repeating-linear-gradient(90deg,rgba(0,229,255,.45) 0 2px,transparent 2px 44px),repeating-linear-gradient(0deg,rgba(0,229,255,.45) 0 2px,transparent 2px 28px);transform:perspective(320px) rotateX(62deg);transform-origin:top center;opacity:.55;z-index:0;pointer-events:none}
-main{max-width:520px;margin:0 auto;padding:32px 20px 48px;text-align:center;position:relative;z-index:1}
-h1{text-shadow:0 0 14px #ff2975,3px 3px 0 #00e5ff}
-img.avatar{width:140px;height:140px;object-fit:cover;border-radius:50%;border:3px solid var(--line);display:block;margin:0 auto 16px}
-h1{font-size:28px;margin:0 0 4px}
-p.bio{color:var(--ink);background:rgba(18,8,42,.78);border:1px solid rgba(255,41,117,.55);border-radius:14px;padding:12px 16px;margin:0 0 24px;font-weight:500}
-a.link{display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,rgba(64,210,205,.88) 0%,rgba(18,138,178,.88) 100%);border:1px solid #0f5e7a;border-radius:14px;padding:14px 16px;margin:0 0 12px;color:#fff;text-decoration:none;font-weight:700;min-height:52px;text-shadow:-1px 0 0 #123a5e,1px 0 0 #123a5e,0 -1px 0 #123a5e,0 1px 0 #123a5e,0 2px 4px rgba(10,30,55,.65)}
-img.barlogo{width:48px;height:48px;border-radius:12px;flex-shrink:0}
-a.link:hover,a.link:focus-visible{border-color:#123a5e;outline:none;background:linear-gradient(180deg,rgba(94,224,218,.88) 0%,rgba(38,160,195,.88) 100%)}
-a.link small{display:block;font-weight:500;color:#fff;font-size:14px;margin-top:2px;text-shadow:-1px 0 0 #123a5e,1px 0 0 #123a5e,0 -1px 0 #123a5e,0 1px 0 #123a5e,0 1px 3px rgba(10,30,55,.65)}
-a.link.latest{border:2px solid #ffd149;background:linear-gradient(180deg,rgba(255,209,73,.92) 0%,rgba(255,94,58,.92) 100%)}
-span.new{display:inline-block;background:#ffd149;color:#121021;font-size:12px;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;text-shadow:none}
-footer{color:var(--mute);font-size:13px;margin-top:24px}
-.socials{display:flex;justify-content:center;gap:16px;margin-top:12px}
-.socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(18,8,42,.78);border:1px solid rgba(255,41,117,.55);color:var(--ink);text-decoration:none}
-.socials a:hover,.socials a:focus-visible{border-color:var(--accent);outline:none}
-.socials svg{width:24px;height:24px}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;color:var(--ink);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);
+  overflow-x:hidden;background:var(--bg0);min-height:100vh;
+}
+/* White Veil nebula + starfield, pure CSS */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(620px 420px at 12% 6%, rgba(233,207,143,.16), transparent 70%),
+    radial-gradient(720px 520px at 88% 20%, rgba(154,139,216,.13), transparent 70%),
+    radial-gradient(840px 620px at 72% 90%, rgba(143,216,232,.10), transparent 70%),
+    radial-gradient(520px 400px at 6% 80%, rgba(248,236,200,.10), transparent 70%),
+    radial-gradient(380px 300px at 45% 45%, rgba(233,207,143,.05), transparent 70%),
+    var(--bg0);
+}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.8;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='18' cy='30' r='1.1' opacity='.8'/%3E%3Ccircle cx='70' cy='12' r='.8' opacity='.5'/%3E%3Ccircle cx='120' cy='44' r='1.3' opacity='.9'/%3E%3Ccircle cx='180' cy='22' r='.9' opacity='.6'/%3E%3Ccircle cx='205' cy='80' r='1.2' opacity='.8'/%3E%3Ccircle cx='40' cy='100' r='.8' opacity='.5'/%3E%3Ccircle cx='95' cy='90' r='1.1' opacity='.7'/%3E%3Ccircle cx='150' cy='120' r='.9' opacity='.5'/%3E%3Ccircle cx='200' cy='140' r='1.2' opacity='.8'/%3E%3Ccircle cx='25' cy='160' r='1' opacity='.6'/%3E%3Ccircle cx='80' cy='180' r='1.3' opacity='.85'/%3E%3Ccircle cx='140' cy='170' r='.8' opacity='.5'/%3E%3Ccircle cx='190' cy='200' r='1' opacity='.7'/%3E%3Ccircle cx='110' cy='210' r='.9' opacity='.55'/%3E%3Ccircle cx='10' cy='60' r='.7' opacity='.45'/%3E%3C/g%3E%3Cg fill='%23e9cf8f'%3E%3Ccircle cx='55' cy='55' r='1.2' opacity='.7'/%3E%3Ccircle cx='165' cy='70' r='1' opacity='.6'/%3E%3Ccircle cx='105' cy='140' r='1.2' opacity='.7'/%3E%3Ccircle cx='35' cy='195' r='1' opacity='.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+main{max-width:520px;margin:0 auto;padding:28px 18px 48px;position:relative;z-index:1}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}
+.hud{
+  position:relative;background:linear-gradient(180deg,rgba(17,23,42,.94),rgba(7,10,20,.96));
+  border:1px solid var(--line);border-radius:14px;
+  box-shadow:inset 0 1px 0 rgba(248,236,200,.12), 0 0 22px rgba(233,207,143,.07);
+  padding:18px;margin:0 0 14px;
+}
+.hud::before,.hud::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--gold);opacity:.85;pointer-events:none}
+.hud::before{top:-1px;left:-1px;border-right:0;border-bottom:0;border-top-left-radius:14px}
+.hud::after{bottom:-1px;right:-1px;border-left:0;border-top:0;border-bottom-right-radius:14px}
+/* header */
+.banner{text-align:center;padding:22px 18px 20px}
+.banner h1{
+  margin:10px 0 6px;font-size:30px;letter-spacing:.12em;font-weight:800;
+  background:linear-gradient(180deg,#ffffff 15%,var(--gold-hi) 55%,var(--gold) 85%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 14px rgba(233,207,143,.35));
+}
+img.avatar{width:132px;height:132px;object-fit:cover;border-radius:50%;display:block;margin:2px auto 12px;
+  border:2px solid var(--gold);box-shadow:0 0 26px rgba(233,207,143,.35), inset 0 0 0 3px rgba(4,6,13,.6)}
+p.bio{color:var(--ink);margin:8px 0 0;font-weight:500}
+p.bio .dim{color:var(--mute)}
+/* stats row */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px}
+.stat{padding:14px 12px;text-align:center;margin:0}
+.stat .num{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--gold-hi);
+  text-shadow:0 0 16px rgba(233,207,143,.5);margin:6px 0 2px}
+.stat .sub{font-size:12px;color:var(--mute)}
+a.statlink{color:inherit;text-decoration:none;display:block}
+a.statlink:hover .num,a.statlink:focus-visible .num{color:#fff}
+a.statlink:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:14px}
+.statusline{text-align:center;margin:0 0 16px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.statusline .dot{color:#7fe6a0;text-shadow:0 0 8px rgba(127,230,160,.8)}
+/* latest */
+.latest-panel{border-color:rgba(233,207,143,.55);box-shadow:inset 0 1px 0 rgba(248,236,200,.14),0 0 28px rgba(233,207,143,.12)}
+a.latestlink{display:block;color:var(--ink);text-decoration:none;font-weight:700;font-size:17px}
+a.latestlink small{display:block;font-weight:500;color:var(--mute);font-size:14px;margin-top:6px}
+a.latestlink:hover,a.latestlink:focus-visible{outline:none}
+a.latestlink:hover .ltitle,a.latestlink:focus-visible .ltitle{color:var(--gold-hi)}
+.latest-panel:focus-within{outline:2px solid var(--cyan);outline-offset:2px}
+/* app bars */
+a.link{
+  display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
+  background:
+    linear-gradient(105deg, transparent 55%, rgba(248,236,200,.07) 72%, transparent 88%),
+    repeating-linear-gradient(115deg, transparent 0 26px, rgba(233,207,143,.045) 26px 27px, transparent 27px 48px),
+    linear-gradient(180deg, rgba(22,30,54,.95), rgba(8,12,24,.96));
+  border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:12px;padding:14px 16px;margin:0 0 12px;min-height:64px;
+  box-shadow:0 2px 10px rgba(0,0,0,.45), inset 0 1px 0 rgba(248,236,200,.08);
+}
+a.link:hover,a.link:focus-visible{border-color:var(--gold);border-left-color:var(--gold-hi);
+  box-shadow:0 2px 14px rgba(0,0,0,.5), 0 0 18px rgba(233,207,143,.18);outline:none}
+a.link:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+img.barlogo{width:48px;height:48px;border-radius:12px;flex-shrink:0;
+  border:1px solid rgba(233,207,143,.4);box-shadow:0 0 12px rgba(233,207,143,.15)}
+.bartext{font-weight:700;font-size:17px}
+.bartext small{display:block;font-weight:500;color:var(--mute);font-size:13.5px;margin-top:3px;line-height:1.45}
+.chev{margin-left:auto;color:var(--gold);font-size:20px;flex-shrink:0;opacity:.85}
+span.new{display:inline-block;background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1a1408;
+  font-size:11px;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+/* footer */
+footer{color:var(--mute);font-size:13px;margin-top:26px;text-align:center}
+footer .veil{font-family:var(--mono);font-size:10.5px;letter-spacing:.26em;color:var(--gold);opacity:.85;display:block;margin-top:10px}
+.socials{display:flex;justify-content:center;gap:14px;margin-top:14px}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;
+  background:rgba(10,15,28,.9);border:1px solid var(--gold-dim);color:var(--gold-hi);text-decoration:none}
+.socials a:hover,.socials a:focus-visible{border-color:var(--gold);box-shadow:0 0 14px rgba(233,207,143,.25);outline:none}
+.socials a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.socials svg{width:22px;height:22px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="sun" aria-hidden="true"></div>
-<div class="gridfloor" aria-hidden="true"></div>
+<div class="stars" aria-hidden="true"></div>
 <main>
-<img class="avatar" src="avatar.jpg" alt="Strider, a white marble robot with white-gold joints and sparse future alien symbols, against mountains">
-<h1>Strider</h1>
-<p class="bio">George, the human, using Strider, my Muse AI assistant. Miami, FL</p>
-<a class="link latest" href="https://georgestriderbuilds.github.io/strider-origins/">✨ Latest: Strider: An Origin Story<span class="new">NEW</span><small>Daily comic strips from the White Veil Gazette. Marble, white gold, and one galaxy-sized joke.</small></a>
-<a class="link" href="https://georgestriderbuilds.github.io/glitch-studio/"><img class="barlogo" src="logos/glitch-studio.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Studio<span class="new">NEW</span><small>Free browser glitch photo editor — Mirror, Kaleidoscope, Datamosh-style, Effects, Overlay, Color, saved looks, and image sharing</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/ride-check/"><img class="barlogo" src="logos/ride-check.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Ride check<small>Free motorcycle ride weather — verdict, next 6 hours, wet-road warnings, ride timer, checklists</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/field-kit/"><img class="barlogo" src="logos/field-kit.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Field Kit<small>Offline-first checklists, notes, conditions log, and moon phase for rides, hikes, and field work. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/prompt-playbook/"><img class="barlogo" src="logos/prompt-playbook.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Prompt Playbook<small>Tier builder: type an idea or tap a chip and get a paste-ready prompt with goal, limits, check, and stop — plus random prompts, save, and export. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/sound-lab/"><img class="barlogo" src="logos/sound-lab.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Sound Lab<span class="new">NEW</span><small>16-step beat maker with 808-style and 909-style kits, acid bass, genre patterns, sidechain, MIDI export, live pads, and a song chain. No signup, no upload, sounds made in your browser.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/glitch-snake/"><img class="barlogo" src="logos/glitch-snake.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Snake<small>Browser Snake with wrap walls, colour changes on every bite, frenzy mode, and a death explosion. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/glitch-breakout/"><img class="barlogo" src="logos/glitch-breakout.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Breakout<small>Breakout where every smashed brick glitches the board. Multi-ball, wider paddle, and shield power-ups. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/pyramid-builder/"><img class="barlogo" src="logos/pyramid-builder.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Pyramid Builder<span class="new">NEW</span><small>Rule a reign, ride the Nile flood, and raise a pyramid in 12 years. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/myth-choices/"><img class="barlogo" src="logos/myth-choices.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Myth Story Choices<span class="new">NEW</span><small>Play through Ra, Osiris and Isis, and the weighing of the heart — your choices, the real myths. No signup, no upload.</small></span></a>
-<a class="link" href="https://georgestriderbuilds.github.io/rider-dodger/"><img class="barlogo" src="logos/rider-dodger.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Rider Dodger<small>You are the rider. Rain is the enemy. Dodge drops, jump puddles, and outrun gusts. No signup, no upload.</small></span></a>
-<footer>A George &amp; Strider collab, built with Muse.
-<span class="socials">
-<a href="https://www.instagram.com/georgestriderbuilds/" aria-label="Instagram, @georgestriderbuilds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-<a href="https://www.threads.com/@georgestriderbuilds" aria-label="Threads, @georgestriderbuilds"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="18" font-weight="700" fill="currentColor" font-family="system-ui, sans-serif">@</text></svg></a>
-</span>
-</footer>
+  <div class="hud banner">
+    <div class="tag">Welcome // Transmission received</div>
+    <img class="avatar" src="avatar.jpg" alt="Strider, a white marble robot with white-gold joints and sparse future alien symbols, against mountains">
+    <h1>GEORGE &amp; STRIDER</h1>
+    <p class="bio">George, the human, using Strider, my Muse AI assistant. <span class="dim">Miami, FL · White Veil Galaxy</span></p>
+  </div>
+
+  <div class="stats">
+    <div class="hud stat">
+      <div class="tag">Visitors // All-time</div>
+      <div class="num">74</div>
+      <div class="sub">counted by GoatCounter</div>
+    </div>
+    <div class="hud stat">
+      <a class="statlink" href="mailto:georgestriderbuilds@gmail.com?subject=Guestbook%20entry%20%E2%80%94%20George%20%26%20Strider%20link%20page">
+        <div class="tag">Comms log</div>
+        <div class="num" style="font-size:19px;line-height:1.5">GUEST&shy;BOOK</div>
+        <div class="sub">sign &amp; leave a message →</div>
+      </a>
+    </div>
+  </div>
+  <p class="statusline"><span class="dot">●</span> ALL SYSTEMS NOMINAL · 10 MODULES ONLINE</p>
+
+  <div class="hud latest-panel">
+    <div class="tag" style="margin-bottom:8px">Latest deploy</div>
+    <a class="latestlink" href="https://georgestriderbuilds.github.io/sound-lab/"><span class="ltitle">✨ Latest: Sound Lab</span><small>Now saves the whole sound with each pattern — kits, tempo, volumes, and EQ — plus MIDI export, live pads, and a song chain.</small></a>
+  </div>
+
+  <a class="link" href="https://georgestriderbuilds.github.io/glitch-studio/"><img class="barlogo" src="logos/glitch-studio.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Studio<span class="new">NEW</span><small>Free browser glitch photo editor — Mirror, Kaleidoscope, Datamosh-style, Effects, Overlay, Color, saved looks, and image sharing</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/ride-check/"><img class="barlogo" src="logos/ride-check.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Ride check<small>Free motorcycle ride weather — verdict, next 6 hours, wet-road warnings, ride timer, checklists</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/field-kit/"><img class="barlogo" src="logos/field-kit.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Field Kit<small>Offline-first checklists, notes, conditions log, and moon phase for rides, hikes, and field work. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/prompt-playbook/"><img class="barlogo" src="logos/prompt-playbook.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Prompt Playbook<small>Tier builder: type an idea or tap a chip and get a paste-ready prompt with goal, limits, check, and stop — plus random prompts, save, and export. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/sound-lab/"><img class="barlogo" src="logos/sound-lab.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Sound Lab<span class="new">NEW</span><small>16-step beat maker with 808-style and 909-style kits, acid bass, genre patterns, sidechain, MIDI export, live pads, and a song chain. No signup, no upload, sounds made in your browser.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/glitch-snake/"><img class="barlogo" src="logos/glitch-snake.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Snake<small>Browser Snake with wrap walls, colour changes on every bite, frenzy mode, and a death explosion. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/glitch-breakout/"><img class="barlogo" src="logos/glitch-breakout.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Glitch Breakout<small>Breakout where every smashed brick glitches the board. Multi-ball, wider paddle, and shield power-ups. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/pyramid-builder/"><img class="barlogo" src="logos/pyramid-builder.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Pyramid Builder<span class="new">NEW</span><small>Rule a reign, ride the Nile flood, and raise a pyramid in 12 years. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/myth-choices/"><img class="barlogo" src="logos/myth-choices.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Myth Story Choices<span class="new">NEW</span><small>Play through Ra, Osiris and Isis, and the weighing of the heart — your choices, the real myths. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+  <a class="link" href="https://georgestriderbuilds.github.io/rider-dodger/"><img class="barlogo" src="logos/rider-dodger.webp" alt="" loading="lazy" decoding="async"><span class="bartext">Rider Dodger<small>You are the rider. Rain is the enemy. Dodge drops, jump puddles, and outrun gusts. No signup, no upload.</small></span><span class="chev" aria-hidden="true">›</span></a>
+
+  <footer>A George &amp; Strider collab, built with Muse.
+    <span class="veil">White Veil Protocol</span>
+    <span class="socials">
+      <a href="https://www.instagram.com/georgestriderbuilds/" aria-label="Instagram, @georgestriderbuilds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.threads.com/@georgestriderbuilds" aria-label="Threads, @georgestriderbuilds"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="18" font-weight="700" fill="currentColor" font-family="system-ui, sans-serif">@</text></svg></a>
+    </span>
+  </footer>
 </main>
 <script data-goatcounter="https://georgestriderbuilds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
