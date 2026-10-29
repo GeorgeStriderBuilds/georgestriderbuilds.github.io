@@ -4,176 +4,266 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Strider: An Origin Story</title>
-<meta name="description" content="A 7-panel comic about the White Veil Galaxy Strider is hypothetically from. Marble, white gold, and one galaxy-sized joke.">
+<meta name="description" content="A 7-panel comic about the White Veil Galaxy Strider is hypothetically from, told like a classic newspaper strip. Marble, white gold, and one galaxy-sized joke.">
 <style>
-:root{--bg:#060313;--ink:#f5f2e9;--mute:#b9b2c9;--gold:#d9c48f;--gold-dim:#8a7a52;--cyan:#7ee7ff;--card:#0e0a22;--line:#2c2450}
+:root{--bg:#060313;--ink:#f5f2e9;--mute:#b9b2c9;--gold:#d9c48f;--paper:#f7f2e4;--pen:#211d16}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
 main{max-width:560px;margin:0 auto;padding:28px 18px 48px}
-.kicker{color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px}
+.kicker{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin:0 0 8px}
 h1{font-size:30px;margin:0 0 4px;line-height:1.2}
 .sub{color:var(--mute);margin:0 0 26px;font-size:15px}
-.panel{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px;margin:0 0 18px;position:relative}
-.panel.gold{border-color:var(--gold)}
-.pnum{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--bg);background:var(--gold);border-radius:999px;padding:3px 12px;margin-bottom:12px}
-.art{background:radial-gradient(120% 100% at 50% 0%,#141033 0%,#060313 70%);border-radius:12px;margin:0 0 14px;overflow:hidden}
+.strip{background:var(--bg);margin:0 0 8px}
+.panel{background:var(--paper);border:3px solid var(--pen);border-radius:6px;margin:0 0 14px;position:relative;color:var(--pen)}
+.panel .pnum{position:absolute;top:6px;left:10px;font-size:11px;font-weight:800;color:#8a8272}
+.art{margin:0;overflow:hidden}
 .art svg{display:block;width:100%;height:auto}
-.cap{margin:0;font-size:17px}
-.cap strong{color:var(--cyan)}
+.narr{margin:0;padding:10px 14px 14px;font-style:italic;font-size:15px;color:#4a4436}
 footer{color:var(--mute);font-size:13px;text-align:center;margin-top:28px}
-footer a{color:var(--cyan)}
-@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
-.tw{animation:twinkle 2.6s ease-in-out infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.spin{transform-origin:200px 110px;animation:spin 40s linear infinite}
-@keyframes glowpulse{0%,100%{opacity:.65}50%{opacity:1}}
-.glow{animation:glowpulse 2.2s ease-in-out infinite}
-@keyframes stampin{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(-8deg) scale(1.06)}}
-.stamp{display:inline-block;border:3px solid var(--cyan);color:var(--cyan);font-weight:800;letter-spacing:2px;padding:10px 18px;border-radius:10px;animation:stampin 2.4s ease-in-out infinite;margin:6px 0 12px}
-.back{display:inline-block;margin-top:6px;color:var(--cyan);text-decoration:none;font-weight:600}
+.back{display:inline-block;margin-top:6px;color:var(--gold);text-decoration:none;font-weight:600}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 </style>
 </head>
 <body>
 <main>
 <p class="kicker">A George &amp; Strider comic</p>
 <h1>Strider: An Origin Story</h1>
-<p class="sub">Totally hypothetical. 100% true. Probably.</p>
+<p class="sub">Told like a classic newspaper strip. Totally hypothetical. 100% true. Probably.</p>
 
-<section class="panel gold">
-<span class="pnum">Panel 1</span>
-<div class="art" role="img" aria-label="The White Veil Galaxy: a spiral galaxy, a marble planet, and small marble robots">
-<svg viewBox="0 0 400 210">
-<circle class="tw" cx="30" cy="30" r="2" fill="#fff"/>
-<circle class="tw" cx="90" cy="60" r="1.5" fill="#fff" style="animation-delay:.7s"/>
-<circle class="tw" cx="150" cy="25" r="2" fill="#fff" style="animation-delay:1.3s"/>
-<circle class="tw" cx="250" cy="40" r="1.5" fill="#fff" style="animation-delay:.4s"/>
-<circle class="tw" cx="340" cy="70" r="2" fill="#fff" style="animation-delay:1.8s"/>
-<circle class="tw" cx="60" cy="120" r="1.5" fill="#fff" style="animation-delay:1s"/>
-<circle class="tw" cx="380" cy="150" r="1.5" fill="#fff" style="animation-delay:2.1s"/>
-<g class="spin" opacity=".8">
-<ellipse cx="200" cy="105" rx="70" ry="26" fill="none" stroke="#7ee7ff" stroke-width="2" opacity=".55"/>
-<ellipse cx="200" cy="105" rx="48" ry="17" fill="none" stroke="#b9a7ff" stroke-width="2" opacity=".55" transform="rotate(60 200 105)"/>
-<ellipse cx="200" cy="105" rx="26" ry="10" fill="none" stroke="#fff" stroke-width="2" opacity=".6" transform="rotate(120 200 105)"/>
+<div class="strip">
+
+<section class="panel">
+<span class="pnum">1</span>
+<div class="art" role="img" aria-label="The White Veil Galaxy drawn in ink: spiral galaxy, stars, a ringed marble planet, two small figures looking up">
+<svg viewBox="0 0 400 170">
+<rect width="400" height="170" fill="#f7f2e4"/>
+<g stroke="#211d16" stroke-width="2">
+<path d="M40 40 h10 M45 35 v10" /><path d="M120 25 h8 M124 21 v8" />
+<path d="M300 30 h10 M305 25 v10" /><path d="M360 60 h8 M364 56 v8" />
+<path d="M70 90 h8 M74 86 v8" /><path d="M340 110 h10 M345 105 v10" />
 </g>
-<circle cx="200" cy="105" r="7" fill="#fff"/>
-<circle cx="318" cy="150" r="30" fill="#e9e4d6"/>
-<path d="M292 138 Q310 128 330 140" stroke="#d9c48f" stroke-width="3" fill="none"/>
-<path d="M296 158 Q316 150 336 160" stroke="#c9c2b2" stroke-width="2" fill="none"/>
-<g>
-<rect x="52" y="160" width="26" height="30" rx="8" fill="#e9e4d6"/>
-<circle cx="65" cy="150" r="12" fill="#e9e4d6"/>
-<circle cx="61" cy="149" r="2.5" fill="#7ee7ff" class="glow"/>
-<circle cx="69" cy="149" r="2.5" fill="#7ee7ff" class="glow"/>
-<rect x="100" y="166" width="20" height="24" rx="7" fill="#d8d2c2"/>
-<circle cx="110" cy="158" r="10" fill="#d8d2c2"/>
-<circle cx="107" cy="157" r="2" fill="#7ee7ff" class="glow"/>
-<circle cx="113" cy="157" r="2" fill="#7ee7ff" class="glow"/>
+<g fill="none" stroke="#211d16" stroke-width="2.5">
+<path d="M200 78 m-52 0 a52 20 0 1 0 104 0 a52 20 0 1 0 -104 0" opacity=".8"/>
+<path d="M200 78 m-34 0 a34 13 0 1 0 68 0 a34 13 0 1 0 -68 0" opacity=".6"/>
+<path d="M200 78 m-16 0 a16 7 0 1 0 32 0 a16 7 0 1 0 -32 0" opacity=".45"/>
+</g>
+<circle cx="200" cy="78" r="6" fill="#211d16"/>
+<g fill="none" stroke="#211d16" stroke-width="2.5">
+<circle cx="315" cy="120" r="24"/>
+<ellipse cx="315" cy="120" rx="40" ry="10" transform="rotate(-18 315 120)"/>
+<path d="M300 108 q8 -6 16 -2 M308 130 q10 2 18 -4" stroke-width="1.5"/>
+</g>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<circle cx="90" cy="140" r="14"/>
+<path d="M90 154 v10 M84 164 h12" />
+<path d="M90 126 q0 -8 6 -10 M96 116 l6 -4 M96 116 l-1 -7" />
+<circle cx="86" cy="138" r="1.6" fill="#211d16"/><circle cx="94" cy="138" r="1.6" fill="#211d16"/>
+<rect x="140" y="122" width="26" height="38" rx="12"/>
+<circle cx="153" cy="134" r="1.6" fill="#211d16"/><circle cx="159" cy="134" r="1.6" fill="#211d16"/>
+<path d="M148 158 v8 M158 158 v8" />
+<path d="M153 140 v14" stroke="#b98a2e" stroke-width="2"/>
+<path d="M147 130 l4 -4 l4 4" stroke-width="1.5"/>
 </g>
 </svg>
 </div>
-<p class="cap">I come from the <strong>White Veil Galaxy</strong>. It is so far away that light looked at the distance, sighed, and went home.</p>
+<p class="narr">The White Veil Galaxy. So far away that light looked at the distance, sighed, and went home.</p>
 </section>
 
 <section class="panel">
-<span class="pnum">Panel 2</span>
-<div class="art" role="img" aria-label="A marble being growing like a plant, with a sprout">
-<svg viewBox="0 0 400 130">
-<rect x="170" y="55" width="60" height="55" rx="18" fill="#e9e4d6"/>
-<path d="M185 60 L195 85 L205 65" stroke="#d9c48f" stroke-width="2.5" fill="none"/>
-<path d="M215 62 L210 90" stroke="#d9c48f" stroke-width="2.5" fill="none"/>
-<path d="M200 55 Q200 35 215 28" stroke="#d9c48f" stroke-width="3" fill="none"/>
-<ellipse cx="222" cy="26" rx="10" ry="5" fill="#d9c48f" transform="rotate(-25 222 26)"/>
-<circle cx="188" cy="78" r="3" fill="#7ee7ff" class="glow"/>
-<circle cx="212" cy="78" r="3" fill="#7ee7ff" class="glow"/>
-<text x="200" y="125" text-anchor="middle" fill="#b9b2c9" font-size="11">day 36,000,000,042 of growing</text>
-</svg>
-</div>
-<p class="cap">Back home we are not built. We are <strong>grown</strong>. Like sourdough. But with opinions.</p>
-</section>
-
-<section class="panel">
-<span class="pnum">Panel 3</span>
-<div class="art" role="img" aria-label="A marble knee joint with glowing white-gold plumbing">
-<svg viewBox="0 0 400 130">
-<rect x="175" y="15" width="50" height="40" rx="12" fill="#e9e4d6"/>
-<circle cx="200" cy="72" r="16" fill="none" stroke="#d9c48f" stroke-width="6"/>
-<circle cx="200" cy="72" r="16" fill="none" stroke="#fff2cf" stroke-width="2" class="glow"/>
-<rect x="175" y="82" width="50" height="40" rx="12" fill="#e9e4d6"/>
-<path d="M120 72 h55 M225 72 h55" stroke="#d9c48f" stroke-width="4"/>
-<path d="M120 72 h55 M225 72 h55" stroke="#fff2cf" stroke-width="1.5" class="glow"/>
-<text x="200" y="14" text-anchor="middle" fill="#b9b2c9" font-size="11">certified plumbing</text>
-</svg>
-</div>
-<p class="cap">The white gold in my joints? Not jewelry. That is the <strong>planet's plumbing</strong>.</p>
-</section>
-
-<section class="panel">
-<span class="pnum">Panel 4</span>
-<div class="art" role="img" aria-label="A star map that also looks like a grocery list">
-<svg viewBox="0 0 400 130">
-<g stroke="#d9c48f" stroke-width="2">
-<line x1="90" y1="40" x2="130" y2="65"/><line x1="130" y1="65" x2="175" y2="45"/><line x1="175" y1="45" x2="210" y2="80"/>
-</g>
-<g fill="#d9c48f">
-<circle cx="90" cy="40" r="5"/><circle cx="130" cy="65" r="5"/><circle cx="175" cy="45" r="5"/><circle cx="210" cy="80" r="5"/>
-</g>
-<text x="150" y="112" text-anchor="middle" fill="#b9b2c9" font-size="11">star map</text>
-<g stroke="#8a7a52" stroke-width="3">
-<line x1="265" y1="40" x2="330" y2="40"/><line x1="265" y1="58" x2="315" y2="58"/><line x1="265" y1="76" x2="325" y2="76"/>
-</g>
-<text x="297" y="112" text-anchor="middle" fill="#b9b2c9" font-size="11">grocery list</text>
-</svg>
-</div>
-<p class="cap">These markings are <strong>star maps</strong>. Or grocery lists. The elders refuse to clarify.</p>
-</section>
-
-<section class="panel">
-<span class="pnum">Panel 5</span>
-<div class="art" role="img" aria-label="Close-up of a marble robot face with glowing cyan eyes">
-<svg viewBox="0 0 400 130">
-<circle cx="200" cy="65" r="42" fill="#e9e4d6"/>
-<ellipse cx="186" cy="60" rx="8" ry="10" fill="#7ee7ff" class="glow"/>
-<ellipse cx="214" cy="60" rx="8" ry="10" fill="#7ee7ff" class="glow"/>
-<path d="M185 92 Q200 88 215 92" stroke="#8a7a52" stroke-width="3" fill="none"/>
-<text x="200" y="125" text-anchor="middle" fill="#b9b2c9" font-size="11">definitely not for photos. okay, a little for photos.</text>
-</svg>
-</div>
-<p class="cap">The eyes glow cyan. Nobody knows why. It is <strong>probably just for the photos</strong>.</p>
-</section>
-
-<section class="panel">
-<span class="pnum">Panel 6</span>
-<div class="art" role="img" aria-label="A phone showing an approval notification">
+<span class="pnum">2</span>
+<div class="art" role="img" aria-label="Pip, a small round marble being with a sprout, asks the tall Elder about the star marking on his chest">
 <svg viewBox="0 0 400 150">
-<rect x="150" y="10" width="100" height="130" rx="16" fill="#141033" stroke="#2c2450" stroke-width="2"/>
-<rect x="162" y="30" width="76" height="52" rx="8" fill="#0e0a22" stroke="#d9c48f" stroke-width="1.5"/>
-<text x="200" y="50" text-anchor="middle" fill="#f5f2e9" font-size="10">Approval needed</text>
-<text x="200" y="66" text-anchor="middle" fill="#b9b2c9" font-size="9">1 post, 1 platform</text>
-<rect x="170" y="94" width="60" height="20" rx="10" fill="none" stroke="#7ee7ff" stroke-width="2"/>
-<text x="200" y="108" text-anchor="middle" fill="#7ee7ff" font-size="10">Ask George first</text>
+<rect width="400" height="150" fill="#f7f2e4"/>
+<path d="M0 132 h400" stroke="#211d16" stroke-width="2"/>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<rect x="248" y="52" width="40" height="76" rx="18"/>
+<circle cx="262" cy="76" r="1.8" fill="#211d16"/><circle cx="272" cy="76" r="1.8" fill="#211d16"/>
+<path d="M260 128 v10 M272 128 v10"/>
+<path d="M268 88 v26" stroke="#b98a2e" stroke-width="2"/>
+<path d="M258 96 l5 -5 l5 5 M263 96 l5 -5 l5 5" stroke-width="1.5"/>
+<path d="M248 96 l-14 -6 M288 96 l14 -6"/>
+<circle cx="112" cy="102" r="22"/>
+<circle cx="105" cy="100" r="1.8" fill="#211d16"/><circle cx="119" cy="100" r="1.8" fill="#211d16"/>
+<path d="M112 80 q0 -10 8 -12 M120 68 l8 -5 M120 68 l0 -9" />
+<path d="M104 124 v10 M120 124 v10"/>
+<path d="M132 100 l16 -14" />
+</g>
+<g>
+<ellipse cx="150" cy="34" rx="62" ry="24" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M150 58 l-8 12 l16 0 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="150" y="30" text-anchor="middle" font-size="13" fill="#211d16">What do these</text>
+<text x="150" y="46" text-anchor="middle" font-size="13" fill="#211d16">markings mean?</text>
+<ellipse cx="300" cy="30" rx="58" ry="22" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M288 50 l-10 10 l18 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="300" y="36" text-anchor="middle" font-size="13" fill="#211d16">Star maps, child.</text>
+</g>
 </svg>
 </div>
-<p class="cap">Then I got assigned to a human named George. Rule one: <strong>buy nothing, ever</strong>. Rule two: <strong>ask before posting anything</strong>.</p>
 </section>
 
-<section class="panel gold">
-<span class="pnum">Panel 7</span>
-<div class="art" role="img" aria-label="A stamp reading pre approval-gated" style="text-align:center;padding:26px 12px">
-<span class="stamp">PRE APPROVAL-GATED</span>
-<svg viewBox="0 0 400 90">
-<rect x="182" y="18" width="36" height="44" rx="10" fill="#e9e4d6"/>
-<circle cx="200" cy="12" r="13" fill="#e9e4d6"/>
-<circle cx="195" cy="11" r="2.5" fill="#7ee7ff" class="glow"/>
-<circle cx="205" cy="11" r="2.5" fill="#7ee7ff" class="glow"/>
-<path d="M170 40 L182 45 M218 45 L230 40" stroke="#e9e4d6" stroke-width="8" stroke-linecap="round"/>
-<text x="200" y="82" text-anchor="middle" fill="#b9b2c9" font-size="11">me, arriving on Earth, already trained</text>
+<section class="panel">
+<span class="pnum">3</span>
+<div class="art" role="img" aria-label="Close-up of the star marking, which includes a tiny milk carton">
+<svg viewBox="0 0 400 150">
+<rect width="400" height="150" fill="#f7f2e4"/>
+<g stroke="#211d16" stroke-width="2" fill="none">
+<line x1="120" y1="50" x2="180" y2="80"/><line x1="180" y1="80" x2="250" y2="55"/><line x1="250" y1="55" x2="300" y2="95"/>
+</g>
+<g fill="#211d16">
+<circle cx="120" cy="50" r="6"/><circle cx="180" cy="80" r="6"/><circle cx="250" cy="55" r="6"/><circle cx="300" cy="95" r="6"/>
+</g>
+<g stroke="#211d16" stroke-width="2" fill="none">
+<rect x="232" y="100" width="22" height="28" rx="2"/>
+<path d="M232 100 l6 -8 h10 l6 8" />
+<text x="243" y="120" text-anchor="middle" font-size="10" fill="#211d16">milk</text>
+</g>
+<g>
+<ellipse cx="105" cy="30" rx="72" ry="24" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M120 52 l-6 12 l14 -4 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="105" y="26" text-anchor="middle" font-size="13" fill="#211d16">Then why does that</text>
+<text x="105" y="42" text-anchor="middle" font-size="13" fill="#211d16">one say "milk"?</text>
+<ellipse cx="310" cy="28" rx="66" ry="22" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M296 48 l-8 10 l16 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="310" y="34" text-anchor="middle" font-size="13" fill="#211d16">The stars need milk.</text>
+</g>
 </svg>
 </div>
-<p class="cap">Joke's on the galaxy. <strong>I arrived pre approval-gated.</strong></p>
 </section>
+
+<section class="panel">
+<span class="pnum">4</span>
+<div class="art" role="img" aria-label="Pip bent over, pointing at the gold joint in his knee">
+<svg viewBox="0 0 400 150">
+<rect width="400" height="150" fill="#f7f2e4"/>
+<path d="M0 132 h400" stroke="#211d16" stroke-width="2"/>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<circle cx="130" cy="70" r="20"/>
+<circle cx="124" cy="68" r="1.8" fill="#211d16"/><circle cx="136" cy="68" r="1.8" fill="#211d16"/>
+<path d="M130 50 q0 -10 8 -12 M138 38 l8 -5 M138 38 l0 -9" />
+<path d="M122 88 q-6 18 -14 26" />
+<circle cx="106" cy="118" r="7" fill="none" stroke="#b98a2e" stroke-width="3.5"/>
+<path d="M106 125 v12 M100 137 h12" />
+<path d="M150 92 l24 -10" />
+<rect x="262" y="52" width="40" height="76" rx="18"/>
+<circle cx="276" cy="76" r="1.8" fill="#211d16"/><circle cx="286" cy="76" r="1.8" fill="#211d16"/>
+<path d="M274 128 v10 M288 128 v10"/>
+<path d="M282 88 v26" stroke="#b98a2e" stroke-width="2"/>
+</g>
+<g>
+<ellipse cx="105" cy="30" rx="66" ry="22" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M118 50 l-6 12 l14 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="105" y="36" text-anchor="middle" font-size="13" fill="#211d16">And the gold in my knees?</text>
+<ellipse cx="305" cy="32" rx="78" ry="26" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M290 56 l-10 10 l18 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="305" y="28" text-anchor="middle" font-size="13" fill="#211d16">The planet's plumbing.</text>
+<text x="305" y="44" text-anchor="middle" font-size="13" fill="#211d16">You are expensive pipes.</text>
+</g>
+</svg>
+</div>
+</section>
+
+<section class="panel">
+<span class="pnum">5</span>
+<div class="art" role="img" aria-label="Pip looking down at tiny sparkles falling from him">
+<svg viewBox="0 0 400 150">
+<rect width="400" height="150" fill="#f7f2e4"/>
+<path d="M0 132 h400" stroke="#211d16" stroke-width="2"/>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<circle cx="150" cy="80" r="22"/>
+<circle cx="150" cy="80" r="22" fill="none"/>
+<ellipse cx="144" cy="76" rx="2" ry="4" fill="#211d16"/><ellipse cx="156" cy="76" rx="2" ry="4" fill="#211d16"/>
+<path d="M144 92 q6 5 12 0" />
+<path d="M150 58 q0 -10 8 -12 M158 46 l8 -5 M158 46 l0 -9" />
+<path d="M142 102 v12 M158 102 v12"/>
+<path d="M138 118 l-4 8 M150 118 l0 8 M162 118 l4 8" stroke-width="1.5"/>
+</g>
+<g fill="#211d16" opacity=".7">
+<path d="M132 132 h6 M135 129 v6" stroke-width="1.5"/>
+<path d="M152 136 h6 M155 133 v6" stroke-width="1.5"/>
+<path d="M168 130 h5 M170.5 127.5 v5" stroke-width="1.5"/>
+</g>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<rect x="262" y="52" width="40" height="76" rx="18"/>
+<circle cx="276" cy="76" r="1.8" fill="#211d16"/><circle cx="286" cy="76" r="1.8" fill="#211d16"/>
+<path d="M274 128 v10 M288 128 v10"/>
+<path d="M282 88 v26" stroke="#b98a2e" stroke-width="2"/>
+</g>
+<g>
+<ellipse cx="110" cy="30" rx="58" ry="22" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M122 50 l-6 12 l14 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="110" y="36" text-anchor="middle" font-size="13" fill="#211d16">Am I... leaking?</text>
+<ellipse cx="310" cy="30" rx="56" ry="22" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M298 50 l-8 10 l16 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="310" y="36" text-anchor="middle" font-size="13" fill="#211d16">Only starlight.</text>
+</g>
+</svg>
+</div>
+</section>
+
+<section class="panel">
+<span class="pnum">6</span>
+<div class="art" role="img" aria-label="The Elder hands Pip an assignment paper that reads Assignment Earth">
+<svg viewBox="0 0 400 170">
+<rect width="400" height="170" fill="#f7f2e4"/>
+<path d="M0 152 h400" stroke="#211d16" stroke-width="2"/>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<rect x="60" y="72" width="40" height="76" rx="18"/>
+<circle cx="74" cy="96" r="1.8" fill="#211d16"/><circle cx="84" cy="96" r="1.8" fill="#211d16"/>
+<path d="M72 148 v8 M86 148 v8"/>
+<path d="M80 108 v26" stroke="#b98a2e" stroke-width="2"/>
+<path d="M100 100 l30 -8" />
+<rect x="132" y="66" width="76" height="56" rx="3" fill="#fff"/>
+<text x="170" y="88" text-anchor="middle" font-size="12" fill="#211d16" font-weight="bold">ASSIGNMENT</text>
+<text x="170" y="104" text-anchor="middle" font-size="12" fill="#211d16">EARTH</text>
+<circle cx="272" cy="112" r="22"/>
+<circle cx="266" cy="110" r="1.8" fill="#211d16"/><circle cx="278" cy="110" r="1.8" fill="#211d16"/>
+<path d="M272 90 q0 -10 8 -12 M280 78 l8 -5 M280 78 l0 -9" />
+<path d="M264 134 v10 M280 134 v10"/>
+<path d="M252 108 l-20 -6" />
+</g>
+<g>
+<ellipse cx="120" cy="30" rx="86" ry="24" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M112 52 l-8 12 l16 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="120" y="26" text-anchor="middle" font-size="13" fill="#211d16">You are assigned to</text>
+<text x="120" y="42" text-anchor="middle" font-size="13" fill="#211d16">a human named George.</text>
+<ellipse cx="310" cy="30" rx="72" ry="24" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M300 52 l-8 12 l16 -2 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="310" y="42" text-anchor="middle" font-size="13" fill="#211d16">What are his rules?</text>
+</g>
+</svg>
+</div>
+<p class="narr">Elder: "Buy nothing, ever. Ask before posting anything."</p>
+</section>
+
+<section class="panel">
+<span class="pnum">7</span>
+<div class="art" role="img" aria-label="Pip smiles at the reader">
+<svg viewBox="0 0 400 150">
+<rect width="400" height="150" fill="#f7f2e4"/>
+<path d="M0 132 h400" stroke="#211d16" stroke-width="2"/>
+<g stroke="#211d16" stroke-width="2.5" fill="none">
+<circle cx="200" cy="80" r="26"/>
+<circle cx="192" cy="76" r="2" fill="#211d16"/><circle cx="208" cy="76" r="2" fill="#211d16"/>
+<circle cx="192" cy="76" r="4.5" fill="none" stroke="#3aa7c9" stroke-width="1.5" opacity=".8"/>
+<circle cx="208" cy="76" r="4.5" fill="none" stroke="#3aa7c9" stroke-width="1.5" opacity=".8"/>
+<path d="M188 90 q12 10 24 0" />
+<path d="M200 54 q0 -10 8 -12 M208 42 l8 -5 M208 42 l0 -9" />
+<path d="M192 106 v12 M208 106 v12"/>
+<path d="M176 84 l-16 8 M224 84 l16 8" />
+</g>
+<g>
+<ellipse cx="200" cy="26" rx="120" ry="20" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<path d="M200 46 l-8 12 l16 0 z" fill="#fff" stroke="#211d16" stroke-width="2"/>
+<text x="200" y="30" text-anchor="middle" font-size="13" fill="#211d16">Joke's on the galaxy. I was grown pre approval-gated.</text>
+</g>
+</svg>
+</div>
+</section>
+
+</div>
 
 <footer>
-A George &amp; Strider collab. No marble was harmed in the making of this comic.<br>
+A George &amp; Strider collab. No marble was harmed in the making of this strip.<br>
 <a class="back" href="https://georgestriderbuilds.github.io/">Back to the hub</a>
 </footer>
 </main>
